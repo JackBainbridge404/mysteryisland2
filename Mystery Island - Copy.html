@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset=utf-8>
+		<title>Mystery Island</title>
+		<link href="style2.css" rel="stylesheet" type="text/css">
+	</head>
+	<body> 
+		<div id="wrapper">
+			<header>
+				<h1>Mystery Island</h1>
+				<p>Welcome to mystery island</p>
+				<br>
+			</header>
+			
+			<div id="content">
+			<br><br>
+		
+				<div id="leftcol"> 
+					<h1>Summary of story</h1>
+					<p id="Summary">That’s it you are on the final stage of the journey to your new home… Australia!, 
+					you have been in the air for a few hours now, you are now beginning to get tired from flying all day. 
+					There isn’t much to do on board the flight apart from watching a film or going for a nap, what would 
+					you like to do? </p>
+				</div>
+
+				<div id="rightcol">
+					<div id="rightcol1">
+						<p>map placeholder</p>
+					</div>
+					<div id="rightcol2">
+						<H1>Menu/ Options</H1>
+						<p>Music options</p>
+						<br><br>
+					</div>
+				</div>
+				
+				<div id="midcol">
+					
+					<div id="midcol1">
+					<img id=img1 src="New folder/Plane_interior.webp">
+					</div>
+					
+					<div id="midcol2">
+					<p id="p1">That’s it you are on the final stage of the journey to your new 
+					home… Australia!, you have been in the air for a few hours now, you 
+					are now beginning to get tired from flying all day. </p>
+					<br>
+					<p>What would you like to do?</p>
+					</p>
+					</div>
+					
+					
+					<div id="midcol3">
+						<div id ="buttons">
+						<br>
+						<button type="button" onclick ="window1()">
+						Look out of the window
+						</button>
+						<br>
+						<br>
+						<button type="button" onclick ="film()">
+						Watch a film
+						</button>
+						<br>
+						<br>
+						<button type="button" onclick ="sleep()">
+						Try and get some sleep.
+						</button>
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+			
+			<script> 
+				
+				function window1() {
+					var text = document.getElementById('p1').innerHTML = 'You look out of the window all you can see below you is the indian ocean.'; //here I am writing a text from the story into the element p1 it is then being stored as a variable called text 
+					document.getElementById('img1').src = 'new folder/Window.jpg'; //here i am displaying an image by changing the source of the image that is already stored in the element img1, this causes the website to display a different image 
+					var paragraph = document.getElementById("Summary"); //here I am assigning another element called summary to a variable paragraph
+					paragraph.textContent += text ; // here I am adding the text variable above to the text content of the variable paragraph, this allows text to be added dynamically
+					document.getElementById('buttons').remove(); // I am removing the section that is the element buttons and then on the line below I am replacing the buttons that will be displayed on the site
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="film()">Watch a film</button><br><br><button type="button" onclick ="sleep()">Try and get some sleep.</button></div>';
+					
+				} // Overall this function will activate when the window1() button is clicked, it will then change the content of the page allowing the user to progress through the story without having to change pages.
+				
+				function film() {
+					var text = document.getElementById('p1').innerHTML = ' You choose to watch a film, there aren’t many films you recognise so you decide to watch the airlines pick, it’s been a long journey and there is still more to go, you begin to fall asleep.'; 
+					document.getElementById('img1').src ='New folder/plane seat.jpg';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="crash()">Continue</button></div>'
+				}
+				
+				function sleep() {
+					var text = document.getElementById('p1').innerHTML = ' You choose to try and go for a nap, after all it has been a long journey, you put your ear plugs in and your sleep mask on and begin to dose off.';
+					document.getElementById('p1').src = 'New folder/plane seat.jpg';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+				}
+				
+				function crash() {
+					var text = document.getElementById('p1').innerHTML = ' You awaken to see that there is a general panic in the aircraft, you hear other flyers crying, you realise that there is something wrong. The telecom turns on “Hello this is your captain I am afraid to say that we have lost control of the aircraft”. The oxygen masks drop down and you manage to get it on as you feel that you are becoming faint.';					document.getElementById('img1').src = 'New folder/Window.jpg';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('img1').src ='New folder/Panic';
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="awaken()">Continue</button></div>'
+				}
+				
+				function awaken() {
+					var text = document.getElementById('p1').innerHTML = ' You once again awaken, however this time you feel a cool breeze, sand on your body, and water washing against your feet, it looks like you are on an island with a golden beach and exoctic water. To the west you can see a hill, to the north thre is a jungle, to the east there is a cliff face';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="hill()">Climb hill</button><br><br><button type="button" onclick ="jungle()">Go into the jungle</button></div>'
+				}
+				
+				function hill() {
+					var text = document.getElementById('p1').innerHTML = 'You decide to climb the hill, it was steeper than you thought it would’ve been, however you now have a vantage point, you can see a few figures further along the beach , there is also a clearing in the jungle to the …';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="clearing()">Go to the clearing in the Jungle</button><br><br><button type="button" onclick ="people()">Go towards the people on the beach</button></div>'
+				}
+				
+				function clearing() {
+					var text = document.getElementById('p1').innerHTML = 'You chose to go to the clearing, as you move through the clearing you are able to see two structures, you continue through the clearing and to your surprise you have found the cockpit, the other structure seems to be some sort of shack. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cockpit()">Go to cockpit</button></div>'
+				}
+				
+				function people() {
+					var text = document.getElementById('p1').innerHTML = 'You decide to go towards the people on the beach, as you get closer you notice that they aren’t wearing any clothes, in fact they are covered in paint, they seem to have noticed you as they start to shudder towards you ….';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="peopleattack1()">Run away</button><br><br><button type="button" onclick ="peopleattack2()">Hold your ground</button></div>';
+				}
+				
+				function peopleattack1() {
+					var text = document.getElementById('p1').innerHTML = 'You decide to turn and run away, as you do so another group emerges from the dense jungle, they start to chant and charge you from all sides. There is nothing you can do as they start hacking you with thier stone weapons. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+				
+				function peopleattack2() {
+					var text = document.getElementById('p1').innerHTML = ' You decide to stand your ground and try and fend them off, however they easily defeat you, smashing you with thier stone weapons.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+				
+				function jungle() {
+					var text = document.getElementById('p1').innerHTML = ' You go into the jungle, after walking for a while you find a cave, on all other sides there is a swamp, over the other side of the swamp there are a few seats from the plane';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cave1()">Enter cave</button><br><br><button type="button" onclick ="swamp()">Go through swamp</button></div>'
+				}
+				
+				function cockpit() {
+					var text = document.getElementById('p1').innerHTML = 'You chose to go to the cockpit, as you step inside a tribesman jumps out at you grasping a  spear in his hand, the sudden movement causes the cockpit to shift, both of you fall, the spear land between the both of you ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cockpitfight0()">Run Away</button><br><br><button type="button" onclick ="cockpitfight1()">Grab the spear</button></div>'
+				}
+				
+				function cockpitfight0() {
+					var text = document.getElementById('p1').innerHTML = 'You try to run, you feel a sudden pain in your back, you have been impaled by the spear. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+					
+				}
+				
+				function cockpitfight1() {
+					var text = document.getElementById('p1').innerHTML = 'You grab the spear and pull it towards you, the tribesman pulls out a stone knife and you have the spear. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cockpitfight10()">Attack the tribesman</button><br><br><button type="button" onclick ="cockpitfight11()">Defend against the tribesman</button></div>'
+				}
+				
+				function cockpitfight10() {
+					var text = document.getElementById('p1').innerHTML = 'You decide to attack with the spear, you lunge forward and as you do so the tribesman catches you with the stone knife, and you feel that you have been slashed. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'	
+				}
+				
+				function cockpitfight11() {
+					var text = document.getElementById('p1').innerHTML = 'You defend with the spear, the tribesman charges you, however since you are defending you direct the spear at him, he stops in his tracks impaled by the weapon, you have beaten the cannibal.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cockpitfightwin()">Search the cockpit</button></div>'
+				}
+		
+				function cockpitfightwin() {
+					var text = document.getElementById('p1').innerHTML = 'You search around the cockpit and find a radio, you then decided you should get out of here.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="shack()">Go to Shack</button></div>'
+				}
+				
+				function shack() {
+					var text = document.getElementById('p1').innerHTML = 'You enter the shack to discover that there are a few other surviours, One of them stops you at the door, he gives a you a once over making sure you aren’t a threat, they begin to tell you about the tribespeople that they have encountered on the island. You tell them about the one you encountered in the cockpit. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="lookshack()">look around the shack</button></div>'
+				}
+				
+				function lookshack() {
+					var text = document.getElementById('p1').innerHTML = 'You have a look around the shack itself and notice the radio receiver in the corner of the room. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="radio()">Connect radio to the rest of the system</button></div>'
+				}
+				
+				function radio() {
+					var text = document.getElementById('p1').innerHTML = '<Radio Conversation>';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You win by escaping the island, congratulations'
+				}
+				
+				function swamp() {
+					var text = document.getElementById('p1').innerHTML = ' You decided to go through the swamp, you make around half way through until you begin to find it difficult to move your legs, it also seems as if the trees are getting taller. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="sinking()">Continue</button></div>'
+				}
+				
+				function sinking() {
+					var text = document.getElementById('p1').innerHTML = ' You are now stuck in the middle as you realize that you are sinking, there is nothing you can do this is the end of the line for you.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+				
+				function cave1() {
+					var text = document.getElementById('p1').innerHTML = ' You choose to enter the cave, you can hear water dripping, it is pitch black so you pull out your lighter to get some light, the cave seems to consistently go down.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cave2()">Continue</button></div>'
+				}
+				
+				function cave2() {
+					var text = document.getElementById('p1').innerHTML = ' As you go further down the cave you begin to see a small amount of light emitting from strange plants, you cannot see any light behind you, you must be deep in this cave now. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cave3()">Continue</button></div>'
+				}
+				
+				function cave3() {
+					var text = document.getElementById('p1').innerHTML = ' You go even further into the cave, when you eventually begin to see light at the bottom of the passage, it is reminiscent of fire, there are also clothes and suitcases lying around on the floor, it seems this is where the rest of the survivors came through.  ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cannibal()">Continue</button></div>'
+				}
+				
+				function cannibal() {
+					var text = document.getElementById('p1').innerHTML = '  You have came to a large opening in the cave, there are a lot of tribespeople quietly chanting, there is an alter in the middle of the opening with a taller tribesperson standing by it, he looks as if he is completing a ritual, in sync all of the tribes people turn their gaze to you, one of them hands you a spear, you look up to see their leader has also been given one. The only way that you are getting out of here is by duelling with their leader. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cannibalfight()">Continue</button></div>'
+				}
+				
+				function cannibalfight() {
+					var text = document.getElementById('p1').innerHTML = ' The leader charges you with a spear.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cannibalfight0()">Stand your ground</button><br><br><button type="button" onclick ="cannibalfight1()">Charge him</button></div>'
+				}
+				
+				function cannibalfight0() {
+					var text = document.getElementById('p1').innerHTML = 'You stand your ground and brace preparing to skewer him, however he is more skillfull than you and knocks the spear out of your hands, he then stabs you with his spear, surely killing you. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+				
+				function cannibalfight1() {
+					var text = document.getElementById('p1').innerHTML = ' You decide to charge him aswell, it seems to work as he wasn’t expecting this, you don’t manage to get him with the spear but you both crash into each other dropping the spears, two stone knifes are thrown between you and the tribe leader, you both pick one up.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cannibalfight10()">Wait for his attack</button><br><br><button type="button" onclick ="cannibalfight11()">Tackle him</button></div>'
+				}
+				
+				function cannibalfight10() {
+					var text = document.getElementById('p1').innerHTML = ' You choose to wait for his attack, it wasn’t a good idea, he closes the distance slashing to make you retreat, he corners you and easily out skills you, he is able to easily beat you.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+				
+				function cannibalfight11() {
+					var text = document.getElementById('p1').innerHTML = ' You choose to tackle him, he wasn’t expecting this either, you manage to get on top of him with the knife ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = '<div id ="buttons"><br><button type="button" onclick ="cannibalfight110()">Dont show mercy</button><br><br><button type="button" onclick ="cannibalfight111()">Show mercy</button></div>'
+				}
+				
+				function cannibalfight110() {
+					var text = document.getElementById('p1').innerHTML = '  You decide to go for the kill, ending it here and now, you successfully beat the tribe leader, all of the other tribes people bow down to you, you are safe for now.';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You have won the game congratulations!'
+				}
+				
+				function cannibalfight111() {
+					var text = document.getElementById('p1').innerHTML = ' You decide to spare him, this wasn’t a good idea, as soon as you drop your knife, you feel his plunge into you, you should have got him whilst you had the chance. ';					
+					document.getElementById('img1').src = 'New folder/Beach'; document.getElementById('img1').alt = 'Picture of Beach';
+					var paragraph = document.getElementById("Summary");
+					paragraph.textContent += text;
+					document.getElementById('buttons').remove();
+					document.getElementById('midcol3').innerHTML = 'You lose, to retry, please restart the game.'
+				}
+					
+			</script>
+			
+			
+			
+			
+			
+			
+			<footer>
+			<br><br> 
+			Mystery Island
+			<br><br>
+			Created by Jack Bainbridge
+			</footer>
+		</div>
+	</body>
+</html>
+
+
+

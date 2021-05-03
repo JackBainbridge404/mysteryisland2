@@ -1,0 +1,36 @@
+
+<html>
+  <head>
+    <title>style.css</title>
+  </head>
+  
+  <body>
+    #wrapper {margin:auto; width:2000px;  } 
+    header {height:50px; text-align:center; color:black; background:white;}
+    h1 {font-size:22pt; font-weight:bold; text-align:center;}
+    h2 {font-size:18pt; text-align:center;}
+    p {font-size:14pt; text-align:center;}
+    a {font-size:18pt; text-align:center;}
+	img {display:block; height:225px; weight:350px; margin-right:auto; margin-left:auto;}
+	
+	#leftcol {float:left; width:25%; height:720px; background:#abedf5; overflow:auto;}
+	
+	
+	
+	#midcol {width: 100%; height:720px; background:#fff5c9; }
+	#midcol1 {width:100%; height:33.333%; ;}
+	#midcol2 {width:50%; height:33.333%; 
+	background:#f5f4ab; overflow:auto;}
+	#midcol3 {width:100%; height:33.333%; 
+	}
+	
+	
+	
+	
+	#rightcol {float:right; width:25%; height:720px; }
+	#rightcol1 {float:right; height:33.3%; width:100%; background:#83838a;}
+	#rightcol2 {float:right; height:66.7%; width:100%; background:green;}
+	
+	br.clear {clear:both}
+  </body>
+</html>
